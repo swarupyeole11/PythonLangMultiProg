@@ -19,11 +19,28 @@ with open("student_marks.txt","r+") as file :
       marks3 = float(line.split(",")[2])
       percentage = ((marks1+marks2+marks3)/300)*100
 
-      print("The Percentage marks of student ", student_count ,"is :" , percentage )
+      print("The Percentage marks of student ", student_count ,"is :" , percentage, "\n" )
 
 
 # Method2
 #  code to calculate percetnage marks of each stundent in the student_marks file
+with open("student_marks.txt","r") as file :
+   
+   student_cnt = 0
+
+   while True :
+      student_cnt+=1
+      line = file.readline()
+
+      if not line:
+         break
+      
+      marks1a = float(line.split(",")[0])
+      marks2a = float(line.split(",")[1])
+      marks3a = float(line.split(",")[2])
+      percentage = ((marks1a+marks2a+marks3a)/300)*100
+
+      print("The Percentage marks of student ", student_cnt ," using method2 is :" , percentage )
 
 
 
