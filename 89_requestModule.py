@@ -1,5 +1,13 @@
 import requests
 
+# VVVVIMP : Python executes every request synchornoulsy 
+
+# Get Request 
+
+resp = requests.get("https://jsonplaceholder.typicode.com/posts")
+print(resp.json())
+
+# Post Request
 data = {
     'title': 'foo',
     'body': 'bar',
