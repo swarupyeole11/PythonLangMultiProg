@@ -11,12 +11,8 @@
 
 import random
 
-def checkwinner():
+def checkwinner(game_dictionary_number_to_words,user_input,computer_input):
    
-   game_dictionary_number_to_words = {-1 : 'Rock', 0: 'Paper', 1: 'Scissor'}
-   game_dictionary_word_to_numbers = { 'Rock' : -1,  'Paper' : 0,  'Scissor' : 1}
-   user_input = game_dictionary_word_to_numbers[input("Choose Rock Paper or Scissor : ")]
-   computer_input = random.randrange(-1 , 1)
 
    # To ensure that there is always an unique input
    if computer_input == user_input :
@@ -39,4 +35,13 @@ def checkwinner():
        print("Computer Won The game It's choice was : ", game_dictionary_number_to_words[computer_input], "\n Your Choice was : ", game_dictionary_number_to_words[user_input] )
 
 
-checkwinner()
+def RockPaperScissorGame() :
+   
+   game_dictionary_number_to_words = {-1 : 'Rock', 0: 'Paper', 1: 'Scissor'}
+   game_dictionary_word_to_numbers = { 'Rock' : -1,  'Paper' : 0,  'Scissor' : 1}
+   user_input = game_dictionary_word_to_numbers[input("Choose Rock Paper or Scissor : ")]
+   computer_input = random.randrange(-1 , 1)
+
+   checkwinner(game_dictionary_number_to_words,user_input,computer_input)
+
+
