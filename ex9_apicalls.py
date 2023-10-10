@@ -2,11 +2,9 @@ import requests
 from dotenv import load_dotenv
 import os 
 
-
-
 load_dotenv() 
-
 NEWS_API_KEY = os.getenv("NEWS_API_KEY")
+
 
 def CountryNews():
     
@@ -31,8 +29,6 @@ def CountryNews():
              break
     except :
          print(data)
-
-        
     
     print(useful_data)
 
@@ -60,7 +56,7 @@ def AllTop10News():
     print(useful_data)
 
 
-
+# Function for the News 
 def News(): 
     
     user_input = int(input("Enter 1 to get latest news For specfic News Enter 2 : "))
