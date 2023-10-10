@@ -1,3 +1,4 @@
+from concurrent.futures import ThreadPoolExecutor
 import threading
 import time
 
@@ -9,7 +10,7 @@ def func(*args) :
 #   here imagine sleep as a network call to api which will take some time also I have used args just to check it's fuctionaliyt and how it works
    time.sleep(args[0])
    print(f" THe function has run for {args[0]} seconds ")
-
+   return args[0]
 
 def multithredingdemo():
 
@@ -36,4 +37,28 @@ def multithredingdemo():
     print("This time indicates the time taken when we waited for the process to complete using join : \n",time.perf_counter()-time_intital)
 
 
-multithredingdemo()
+#  executes the processes parallely
+def pooling_demo():
+  with ThreadPoolExecutor() as executor:
+
+    time_intital = time.perf_counter()
+    future1 = executor.submit(func, 4)
+    future2 = executor.submit(func, 2)
+
+    # here you await fo the result
+    print(future1.result())
+    print(future2.result())
+    print("This time indicates the time taken when we waited for the process to complete using join : \n",time.perf_counter()-time_intital)
+
+def pooling_demo_map():
+     
+     # this ensures parellel execution of the 5 functions also imagine li as list of urls for network call
+      with ThreadPoolExecutor() as executor:
+         li = [3,2,4,1,5]
+         # in the fifthe second you will get all the results since it is the RDS here
+         results = executor.map(func,li)
+
+      for result in results:
+         print(result)
+    
+pooling_demo_map()
