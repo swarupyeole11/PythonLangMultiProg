@@ -42,6 +42,7 @@ def pooling_demo():
   with ThreadPoolExecutor() as executor:
 
     time_intital = time.perf_counter()
+    # the future 1 and future 2 are independent threads
     future1 = executor.submit(func, 4)
     future2 = executor.submit(func, 2)
 
@@ -55,10 +56,10 @@ def pooling_demo_map():
      # this ensures parellel execution of the 5 functions also imagine li as list of urls for network call
       with ThreadPoolExecutor() as executor:
          li = [3,2,4,1,5]
-         # in the fifthe second you will get all the results since it is the RDS here
+         # in the fifth second you will get all the results since it is the RDS here
          results = executor.map(func,li)
 
       for result in results:
          print(result)
     
-pooling_demo_map()
+pooling_demo()
