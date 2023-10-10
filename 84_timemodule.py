@@ -27,3 +27,7 @@ for key,value in dicty.items() :
 
 for x,y in dicty.items():
      print(x,y)
+
+
+# the time.time() gives the current time in python in seconds since 1970 
+print(time.time())
