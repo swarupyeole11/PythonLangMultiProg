@@ -13,6 +13,11 @@
 # more efficient and mamory-iendly manner, as you don |
 # have to generate al the values up front. |
 
+# # # yield in python 
+# In Python, you can create a generator by using the yield
+# statementin a function. The yield statement returns a.
+# Value from the generator and suspends the execution of
+# the function until the next value is requested. 
 
 def my_generator():
     for i in range(500):
